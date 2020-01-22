@@ -1,4 +1,4 @@
-package com.sxs.xaviers.endpoint;
+package com.sxs.xaviers.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,11 +19,11 @@ public class FeeController {
 	@Autowired
 	FeeRepo feeRepo;
 
-	@GetMapping("/fee/{feeid}")
-	public ResponseEntity<FeeMaster> getStudentById(@PathVariable(value = "feeid") Long feeId)
+	@GetMapping("/fee/{month}")
+	public ResponseEntity<FeeMaster> getStudentById(@PathVariable(value = "month") String month)
 			throws ResourceNotFoundException {
 		
-		FeeMaster fee = feeRepo.findByFeeId(feeId);
+		FeeMaster fee = feeRepo.findByMonth(month);
 		
 		return ResponseEntity.ok().body(fee);
 	}

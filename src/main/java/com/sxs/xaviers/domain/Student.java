@@ -10,26 +10,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "student_master")
 
 public class Student {
-	
+
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+
 	private long id;
-	
-	
+
+	private String student_name;
 	private long admission_no;
 	private long ladgerNo;
 	private String dateOfAdmission;
 	private String sex;
 	private int student_class;
-	
-	@OneToOne (cascade = CascadeType.ALL)
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID")
 	private Student_AddInfo stdAddInfo;
 
@@ -39,6 +38,14 @@ public class Student {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getStudent_name() {
+		return student_name;
+	}
+
+	public void setStudent_name(String student_name) {
+		this.student_name = student_name;
 	}
 
 	public long getAdmission_no() {
@@ -87,5 +94,5 @@ public class Student {
 
 	public void setStdAddInfo(Student_AddInfo stdAddInfo) {
 		this.stdAddInfo = stdAddInfo;
-	}	
+	}
 }

@@ -1,4 +1,5 @@
-package com.sxs.xaviers.endpoint;
+package com.sxs.xaviers.controller;
+
 
 import java.util.Optional;
 
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +32,13 @@ public class StudentController {
 		return new ResponseEntity<Student>(updateStudent, HttpStatus.CREATED);
 	}
 
+	
+	@PutMapping(path = "/student", consumes = "application/json", produces = "application/json")
+	public ResponseEntity<Student> updateStudent(@RequestBody Student stdDetails) throws ResourceNotFoundException {		
+		final Student updateStudent = studentService.save(stdDetails);
+		return new ResponseEntity<Student>(updateStudent, HttpStatus.ACCEPTED);
+	}
+	
 	@GetMapping("/student/{id}")
 	public ResponseEntity<Student> getStudentById(@PathVariable(value = "id") Long studentId)
 			throws ResourceNotFoundException {
