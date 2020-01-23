@@ -13,10 +13,10 @@ public class StudentLedger {
 
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	private long studentId;	
+
+	private long studentId;
 	private String month;
 	private long prospectus;
 	private long tutionFee;
@@ -29,5 +29,117 @@ public class StudentLedger {
 	private long others;
 	private long due;
 	private long paid;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public long getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(long studentId) {
+		this.studentId = studentId;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public long getProspectus() {
+		return prospectus;
+	}
+
+	public void setProspectus(long prospectus) {
+		this.prospectus = prospectus;
+	}
+
+	public long getTutionFee() {
+		return tutionFee;
+	}
+
+	public void setTutionFee(long tutionFee) {
+		this.tutionFee = tutionFee;
+	}
+
+	public long getMiscelllaneous() {
+		return miscelllaneous;
+	}
+
+	public void setMiscelllaneous(long miscelllaneous) {
+		this.miscelllaneous = miscelllaneous;
+	}
+
+	public long getAddmissionKit() {
+		return addmissionKit;
+	}
+
+	public void setAddmissionKit(long addmissionKit) {
+		this.addmissionKit = addmissionKit;
+	}
+
+	public long getFestival() {
+		return festival;
+	}
+
+	public void setFestival(long festival) {
+		this.festival = festival;
+	}
+
+	public long getExam() {
+		return exam;
+	}
+
+	public void setExam(long exam) {
+		this.exam = exam;
+	}
+
+	public long getGenerator() {
+		return generator;
+	}
+
+	public void setGenerator(long generator) {
+		this.generator = generator;
+	}
+
+	public long getLateFee() {
+		return lateFee;
+	}
+
+	public void setLateFee(long lateFee) {
+		this.lateFee = lateFee;
+	}
+
+	public long getOthers() {
+		return others;
+	}
+
+	public void setOthers(long others) {
+		this.others = others;
+	}
+
+	public long getDue() {
+		return due;
+	}
+
+	public void setDue(long due) {
+		this.due = due;
+	}
+
+	public long getPaid() {
+		return paid;
+	}
+
+	public void setPaid(long paid) {
+		this.paid = paid;
+	}
 
 }

@@ -1,6 +1,7 @@
 package com.sxs.xaviers.services;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.beanutils.BeanUtils;
@@ -34,48 +35,11 @@ public class StudentService {
 	public Student save(Student student) {
 		return studentRepo.saveAndFlush(student);
 	}
-
-	public Student createOrUpdateEmployee(Student entity) {
-
-		Optional<Student> student = studentRepo.findById(entity.getId());
-
-		if (student.isPresent()) {
-			Student newEntity = student.get();
-
-			Student_AddInfo stdAddInfo = new Student_AddInfo();
-			try {
-				BeanUtils.copyProperties(stdAddInfo, entity.getStdAddInfo());
-			} catch (IllegalAccessException | InvocationTargetException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			newEntity = studentRepo.save(newEntity);
-			return newEntity;
-		} else {
-			
-			
-			
-			Student temp = new Student();
-			temp.setSex("MALE");
-			temp.setDateOfAdmission("25/06/2018");
-			temp.setLadgerNo(123);
-			temp.setAdmission_no(4646);
-			temp.setStudent_class(1);
-			Student_AddInfo stdAddInfo = new Student_AddInfo();
-			
-			stdAddInfo.setAadharNo("XXXXXXXXX");
-			stdAddInfo.setCaste("test");
-			stdAddInfo.setCatagory("test");
-			stdAddInfo.setContNo("87098009809");
-			stdAddInfo.setFatherName("father name");
-			stdAddInfo.setMotherName("mother name");
-			stdAddInfo.setVillage("village");
-			temp.setStdAddInfo(stdAddInfo);
-			entity = temp;
-			
-			entity = studentRepo.save(entity);
-			return entity;
-		}
+	
+	public void saveAll(List<Student> entities) {
+		 studentRepo.saveAll(entities);
 	}
+
+	
 
 }

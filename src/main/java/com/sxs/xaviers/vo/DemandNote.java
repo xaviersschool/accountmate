@@ -18,6 +18,8 @@ public class DemandNote {
 	private long lateFee;
 	private long others;
 	private long previousDue;
+	private long total;
+	private String paymentDueDate;
 	
 	public String getStudentName() {
 		return studentName;
@@ -114,6 +116,18 @@ public class DemandNote {
 	}
 	public void setPreviousDue(long previousDue) {
 		this.previousDue = previousDue;
+	}
+	public long getTotal() {
+		return total;
+	}
+	public void setTotal(long total) {
+		this.total = total;
+	}
+	public String getPaymentDueDate() {
+		return paymentDueDate;
+	}
+	public void setPaymentDueDate(String paymentDueDate) {
+		this.paymentDueDate = paymentDueDate;
 	}
 	
 }

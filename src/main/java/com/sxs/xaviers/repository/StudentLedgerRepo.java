@@ -6,4 +6,5 @@ import com.sxs.xaviers.domain.StudentLedger;
 
 public interface StudentLedgerRepo extends JpaRepository<StudentLedger, Long> {	
 	
+	StudentLedger findByStudentId(long studentId);
 }

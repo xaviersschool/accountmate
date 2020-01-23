@@ -1,5 +1,7 @@
 package com.sxs.xaviers.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,5 +24,13 @@ public class ReceiptService {
 	
 	public Receipt save(Receipt receipt) {
 		return receiptRepo.saveAndFlush(receipt);
+	}
+	
+	public List<Receipt> findByMonth(String month) {		
+		return receiptRepo.findByMonth(month);
+	}
+	
+	public List<Receipt> findByDate(String date) {		
+		return receiptRepo.findByDate(date);
 	}
 }

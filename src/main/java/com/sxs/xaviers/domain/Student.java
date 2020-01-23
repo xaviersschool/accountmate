@@ -27,6 +27,7 @@ public class Student {
 	private String dateOfAdmission;
 	private String sex;
 	private int student_class;
+	private String date_of_birth;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID")
@@ -95,4 +96,13 @@ public class Student {
 	public void setStdAddInfo(Student_AddInfo stdAddInfo) {
 		this.stdAddInfo = stdAddInfo;
 	}
+
+	public String getDate_of_birth() {
+		return date_of_birth;
+	}
+
+	public void setDate_of_birth(String date_of_birth) {
+		this.date_of_birth = date_of_birth;
+	}
+	
 }
