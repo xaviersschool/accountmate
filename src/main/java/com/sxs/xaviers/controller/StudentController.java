@@ -45,5 +45,7 @@ public class StudentController {
 		Optional<Student> student = studentService.findOne(studentId);
 		return ResponseEntity.ok().body(student.get());
 	}
+	
+	
 
 }

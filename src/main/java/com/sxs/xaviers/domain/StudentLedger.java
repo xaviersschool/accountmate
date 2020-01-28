@@ -7,17 +7,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "student_ledger")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class StudentLedger {
 
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	private long studentId;
 	private String month;
+	private String date;
 	private long prospectus;
 	private long tutionFee;
 	private long miscelllaneous;
@@ -52,6 +56,15 @@ public class StudentLedger {
 
 	public void setMonth(String month) {
 		this.month = month;
+	}
+	
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public long getProspectus() {

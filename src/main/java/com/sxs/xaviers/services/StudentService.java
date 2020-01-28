@@ -1,10 +1,8 @@
 package com.sxs.xaviers.services;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,7 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sxs.xaviers.domain.Student;
-import com.sxs.xaviers.domain.Student_AddInfo;
 import com.sxs.xaviers.repository.StudentRepo;
 
 @Service

@@ -19,8 +19,16 @@ public class DemandNote {
 	private long others;
 	private long previousDue;
 	private long total;
-	private String paymentDueDate;
+	private long student_id;
+	private String paymentDueDate;	
 	
+	
+	public long getStudent_id() {
+		return student_id;
+	}
+	public void setStudent_id(long student_id) {
+		this.student_id = student_id;
+	}
 	public String getStudentName() {
 		return studentName;
 	}

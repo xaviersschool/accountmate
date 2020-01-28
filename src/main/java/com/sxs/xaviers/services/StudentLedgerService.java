@@ -1,8 +1,8 @@
 package com.sxs.xaviers.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,11 +17,27 @@ public class StudentLedgerService {
 	StudentLedgerRepo studentLedgerRepo;
 	
 	@Transactional(readOnly = true)
-	public Page<StudentLedger> findAll(Pageable pageable) {
-		return studentLedgerRepo.findAll(pageable);
+	public List<StudentLedger> findAll() {
+		return studentLedgerRepo.findAll();
 	}
 	
-	public StudentLedger save(StudentLedger stdLedger) {
-		return studentLedgerRepo.saveAndFlush(stdLedger);
+	public StudentLedger save(StudentLedger stdLedger) {		
+		return studentLedgerRepo.save(stdLedger);
+	}
+	
+	public StudentLedger fetchStudentLedgerById(Long id) {
+		return studentLedgerRepo.getOne(id);
+	}
+	
+	public List<StudentLedger> fetchStudentLedgerByStudentId(Long StdId) {
+		return studentLedgerRepo.findByStudentId(StdId);
+	}
+	
+	public List<StudentLedger> fetchStdLedgerByStdIdAndMonth(Long stdId, String month) {
+		return studentLedgerRepo.findByStudentIdAndMonth(stdId, month);
+	}
+	
+	public List<StudentLedger> fetchStudentAll() {
+		return studentLedgerRepo.fetchStudentAll();
 	}
 }

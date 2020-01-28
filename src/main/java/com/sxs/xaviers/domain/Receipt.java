@@ -13,7 +13,7 @@ public class Receipt {
 
 	@Id
 	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	private String studentName;
@@ -33,6 +33,25 @@ public class Receipt {
 	private long lateFee;
 	private long others;
 	private long previousDue;
+	private Long student_id;
+	private long receivedAmount;	
+	
+	
+	public long getReceivedAmount() {
+		return receivedAmount;
+	}
+
+	public void setReceivedAmount(long receivedAmount) {
+		this.receivedAmount = receivedAmount;
+	}
+
+	public Long getStudent_id() {
+		return student_id;
+	}
+
+	public void setStudent_id(Long student_id) {
+		this.student_id = student_id;
+	}
 
 	public long getId() {
 		return id;
