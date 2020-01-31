@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,8 +18,8 @@ public class StudentService {
 	StudentRepo studentRepo;
 
 	@Transactional(readOnly = true)
-	public Page<Student> findAll(Pageable pageable) {
-		return studentRepo.findAll(pageable);
+	public List<Student> findAll() {
+		return studentRepo.findAll();
 	}
 
 	@Transactional(readOnly = true)
