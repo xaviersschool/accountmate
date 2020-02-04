@@ -22,7 +22,7 @@ public class StudentService {
 		return studentRepo.findAll();
 	}
 
-	@Transactional(readOnly = true)
+	//@Transactional(readOnly = true)
 	public Optional<Student> findOne(Long id) {
 		return studentRepo.findById(id);
 	}
