@@ -26,7 +26,7 @@ public class DemandNoteService {
 	StudentRepo stdRepo;
 	
 	@Autowired
-	StudentLedgerRepo stdLedgerRepo;
+	StudentLedgerRepo stdLedgerRepo;	
 
 	public DemandNote generateDemandNoteStudentOne(Long studentId, String month) {
 
@@ -126,7 +126,7 @@ public class DemandNoteService {
 		
 		return listOfDemandNotAll;
 	}
-	
+		
 	public List<DemandNote> generateDemandNoteStudentClass(int student_class) {
 
 		return null;
